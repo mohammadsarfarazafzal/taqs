@@ -1,11 +1,11 @@
-# Mausam - Weather Web Application
-![image](https://github.com/MOHAMMAD-SARFARAZ-AFZAL/mausam/assets/76653459/b3329747-929c-4918-afbe-4af89686718a)
+# طقس (Taqs) - Weather Web Application
+![alt text](image.png)
 
 
 
 
 ## Overview
-Welcome to the official repository for Mausam, a beautifully designed and responsive weather web application. Mausam provides real-time weather updates and forecasts to users, helping them stay informed about current and upcoming weather conditions in their area.
+Welcome to the official repository for Taqs, a beautifully designed and responsive weather web application. Taqs provides real-time weather updates to users, helping them stay informed about current weather conditions in their area.
 
 ## Features
 #### Current Weather: Display current weather conditions including temperature, humidity, wind speed, and more.
