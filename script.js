@@ -68,17 +68,17 @@ async function main(lat, long = "") {
 
 
 submit.addEventListener("click", () => {
-    main(input.value)
+    main(input.value);
 });
 
 document.addEventListener("keyup", (e) => {
     if (e.key == "Enter") {
-        main(input.value)
+        main(input.value);
     }
 });
 
 function gotPosition(position) {
-    main(position.coords.latitude, position.coords.longitude)
+    main(position.coords.latitude, position.coords.longitude);
 
 }
 
