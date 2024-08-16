@@ -16,10 +16,17 @@ const weatherOptions = {
 
 async function main(lat, long = "") {
     try {
-        let weatherResponse = await fetch(weatherUrl + lat + "," + long, weatherOptions);
-        console.log(lat, long);
-        let weatherResult = await weatherResponse.json();
-        console.log(weatherResult);
+        let weatherResponse;
+        let weatherResult;
+        if (long == "") {
+            weatherResponse = await fetch(weatherUrl + lat, weatherOptions);
+            weatherResult = await weatherResponse.json();    
+        }
+        else{
+            weatherResponse = await fetch(weatherUrl + lat + "," + long, weatherOptions);
+            weatherResult = await weatherResponse.json();
+        }
+        // console.log(weatherResult);
         cityName.innerText = weatherResult.location.name;
         detailsOf.innerText = weatherResult.location.name;
         cityTemp.innerText = Math.round(weatherResult.current.temp_c) + "°";
@@ -30,7 +37,6 @@ async function main(lat, long = "") {
         document.getElementById("condition").innerText = weatherResult.current.condition.text;
         document.getElementById("update").innerText = weatherResult.current.vis_km + " km";
         let conditionArray = weatherResult.current.condition.text.split(" ");
-        console.log(conditionArray);
         let rainFlag = false; let hotFlag = false;
         for (let i = 0; i < conditionArray.length; i++) {
             if (conditionArray[i] == "rain" || conditionArray[i] == "Mist") {
@@ -78,6 +84,7 @@ function gotPosition(position) {
 
 function failed() {
     console.log("Location permission denied.");
+    alert("Please allow location permission to get weather updates of your location");
     main(22.57, 88.37);
 }
 
